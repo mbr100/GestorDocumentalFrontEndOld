@@ -8,25 +8,25 @@ import {editarRolDTO, Rol} from '../models/rol.model';
   providedIn: 'root'
 })
 export class RolesService {
-    private apiUrl: string = environment.apiUrl;
-    private baseUrl: string = environment.apiRoles
+    private baseURL: string = environment.apiUrl;
+    private apiRoles: string = environment.apiRoles
 
     constructor(private http: HttpClient) { }
 
     public getRoles(): Observable<Rol[]> {
-        return this.http.get(`${this.apiUrl}/${this.baseUrl}/obtenerRoles`).pipe(map((data: any) => <Rol[]>data));
+        return this.http.get(`${this.baseURL}/${this.apiRoles}/obtenerRoles`).pipe(map((data: any) => <Rol[]>data));
     }
 
     public deleteRol(rol: Rol): Observable<any> {
-        return this.http.delete(`${this.apiUrl}/${this.baseUrl}/eliminarRol/${rol.rol}`);
+        return this.http.delete(`${this.baseURL}/${this.apiRoles}/eliminarRol/${rol.rol}`);
     }
 
     public editarRol(rol: editarRolDTO): Observable<any> {
-        return this.http.put(`${this.apiUrl}/${this.baseUrl}/editarRol`, rol);
+        return this.http.put(`${this.baseURL}/${this.apiRoles}/editarRol`, rol);
     }
 
     public nuevoRol(nuevoRol: Rol): Observable<any> {
-        return this.http.post(`${this.apiUrl}/${this.baseUrl}/crearRol`, nuevoRol);
+        return this.http.post(`${this.baseURL}/${this.apiRoles}/crearRol`, nuevoRol);
 
     }
 }

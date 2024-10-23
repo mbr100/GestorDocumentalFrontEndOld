@@ -1,4 +1,4 @@
-export class EliminarResponse {
+export class Responde {
     public statusCode: number;
     public message: string;
 

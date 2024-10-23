@@ -1,4 +1,4 @@
-export class EmpleadoListarDTO {
+export class EmpleadoDTO {
     idEmpleado: number;
     nombre: string;
     email: string;

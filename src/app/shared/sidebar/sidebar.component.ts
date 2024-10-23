@@ -17,4 +17,9 @@ export class SidebarComponent {
     public irGestionRoles(): void {
         this.router.navigateByUrl('/mantenimientos/roles').then(r => console.log('irGestionRoles', r));
     }
+
+    public irGestionEmpleados() {
+        this.router.navigateByUrl('/mantenimientos/empleados').then(r => console.log('irGestionRoles', r));
+
+    }
 }
